@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEB-P005</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="universidade">universidade Estadual de Santa Cruz</div>
+        <div id="menu">Menu</div>
+        <div id="noticias">Notícias
+            <div id="conteudo-noticias"></div>
+        </div>
+        <div id="destaque">Destaques</div>
+        <div id="servicos">Serviços</div>
+        <div id="resultados">Resultados
+            <div id="conteudo-resultados">
+                <ul>
+                    <li>Resultados1</li>
+                    <li>Resultados2</li>
+                    <li>Resultados3</li>
+                    <li>Resultados4</li>
+                    <li>Resultados5</li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer">Universidade Estadual de Santa Cruz</div>
+    </div>
+    <script>
+        var url = 'https://newsapi.org/v2/everything?' +
+            'country=br&' +
+            'category=education&' +
+            'apiKey=183be9fc0a1b4ab4b31c6052463efbac';
+
+        var req = new Request(url);
+        fetch(req).then(function (reposta) {
+            console.log(reposta.json());
+        })
+
+        const NewsAPI = require('newsapi');
+        const newsapi = new NewsAPI('183be9fc0a1b4ab4b31c6052463efbac');
+        // To query /v2/top-headlines
+        // All options passed to topHeadlines are optional, but you need to include at least one of them
+        newsapi.v2.topHeadlines({
+            category: 'education',
+            language: 'pt',
+            country: 'br'
+        }).then(response => {
+            console.log(response);
+            /*
+              {
+                status: "ok",
+                articles: [...]
+              }
+            */
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+.container{
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.container img{
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+}

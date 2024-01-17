@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 20%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+#universidade {
+    grid-column: 1/4;
+    grid-row: 1/3;
+    background-color: rgb(44, 44, 153);
+    font-size: xx-large;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+#menu {
+    background-color: gray;
+    font-size: large;
+    text-align: left;
+}
+
+#noticias {
+    background-color: gray;
+    font-size: large;
+    text-align: left;
+}
+
+
+#destaque {
+    background-color: gray;
+    font-size: large;
+    text-align: left;
+}
+
+#servicos {
+    background-color: gray;
+    font-size: large;
+    text-align: left;
+
+}
+
+#resultados {
+    grid-column: 2/4;
+    background-color: gray;
+    font-size: large;
+    text-align: left;
+}
+
+#footer {
+    grid-column: 1/4;
+    grid-row: 5;
+    position: sticky;
+    text-align: center;
+    background-color: rgb(44, 44, 153);
+    font-size: small;
+    font-family: 'Playfair Display', serif;
+    color: aliceblue;
+
+}
+
+#conteudo-noticias{
+    background-color: gainsboro;
+}
+
+#conteudo-resultados{
+    background-color: gainsboro;
+}

@@ -1,0 +1,9 @@
+.container{
+    background-color: gray;
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.container ul{
+    font-weight: lighter;
+}

@@ -1,0 +1,10 @@
+.container{
+    background-color: gray;
+    font-size: medium;
+    text-align: left;
+    font-weight: bolder;
+}
+
+.container ul{
+    font-weight: lighter;
+}

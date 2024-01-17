@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+.container{
+    display: grid;
+    grid-template-columns: auto auto 20%;
+    grid-template-rows: 50% auto auto 10%;
+    grid-template-areas: 
+    'header header header'
+    'menu noticias destaque'
+    'servicos resultados resultados'
+    'footer footer footer';
+    row-gap: 10px;
+    column-gap: 5px;
+}
+
+.container div{
+    background-color: gray;
+}
+
+.container app-noticias{
+    background-color: gray;
+}
+
+.container app-destaque{
+    background-color: gray;
+}
+
+.container app-servicos{
+    background-color: gray;
+}
+
+.container app-resultados{
+    background-color: gray;
+}
+
+#header{
+    grid-area: header;
+    background-color: blue;
+    font-family: 'Bebas Neue', sans-serif;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: xx-large;
+}
+
+#menu{
+    grid-area: menu;
+    
+}
+
+#noticias{
+    grid-area: noticias;
+}
+
+#destaque{
+    grid-area: destaque;
+}
+
+#servicos{
+    grid-area: servicos;
+}
+
+#resultados{
+    grid-area: resultados;
+}
+
+#footer{
+    grid-area: footer;
+    background-color: blue;
+    position: sticky;
+    text-align: center;
+    font-size: small;
+    font-family: 'Playfair Display', serif;
+    color: aliceblue;
+}
