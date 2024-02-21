@@ -1,0 +1,83 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2>Formulário de Cadastro</h2>
+  <div class="div-inputs">
+    <label for="Nome">Nome</label>
+    <input formControlName="Nome" name="Nome"><br>
+    <div *ngIf="form.get('Nome')?.invalid && form.get('Nome')?.touched">
+      <span>sem espaços e máximo doze letras</span>
+    </div>
+  </div>
+
+  <div class="div-inputs">
+    <label for="NomeCompleto">Nome Completo</label>
+    <input formControlName="NomeCompleto" name="NomeCompleto"><br>
+    <div *ngIf="form.get('NomeCompleto')?.errors?.['Nomecompletoinvalid'] && form.get('NomeCompleto')?.touched">
+      <span>Digite um nome válido</span>
+    </div>
+  </div>
+
+  <div class="div-inputs">
+    <label for="Senha">Senha</label>
+    <input formControlName="Senha" name="Senha"><br>
+    <div *ngIf="form.get('Senha')?.invalid && form.get('Senha')?.touched">
+      <span>senha incorreta</span>
+    </div>
+  </div>
+
+  <div class="div-inputs">
+    <label for="Email">Email</label>
+    <input formControlName="Email" name="Email"><br>
+    <div *ngIf="form.get('Email')?.invalid && form.get('Email')?.touched">
+      <span>Email incorreto</span>
+    </div>
+  </div>
+
+  <div class="div-inputs">
+    <label for="Telefone">Telefone</label>
+    <input formControlName="Telefone" name="Telefone" placeholder="(XX)XXXXX-XXXX"><br>
+    <div *ngIf="form.get('Telefone')?.invalid && form.get('Telefone')?.touched">
+      <span>Telefone inválido</span>
+    </div>
+  </div>
+
+  <div class="div-inputs"> "
+    <label for="Endereco">Endereço</label>
+    <input formControlName="Endereco" name="Endereco"><br>
+    <div *ngIf="form.get('Endereco')?.invalid && form.get('Endereco')?.touched">
+      <span>Endereço não encontrado</span>
+    </div>
+  </div>
+
+  <div class="div-inputs">
+    <label for="Endereço">Endereço</label>
+    <input formControlName="Endereço" name="Endereço"><br>
+    <div *ngIf="form.get('Endereço')?.invalid && form.get('Endereço')?.touched">
+      <span>Endereço não encontrado</span>
+    </div>
+  </div>
+
+  <div class="div-inputs">
+    <label for="Genero">Genero</label>
+    <select formControlName="Genero" name="Genero">
+      <option value="masculino">masculino</option>
+      <option value="Feminino">Feminino</option>
+    </select>
+    <div *ngIf="form.get('Genero')?.invalid && form.get('Genero')?.touched">
+      <span>Campo obrigatório</span>
+    </div>
+  </div>
+
+  <div class="div-inputs">
+    <label for="Profissao">Profissao</label>
+    <select formControlName="Profissao" name="Profissao">
+      <option value="Engenheiro">Engenheiro</option>
+      <option value="Desenvolvedor">Desenvolvedor</option>
+    </select>
+    <div *ngIf="form.get('Profissao')?.invalid && form.get('Profissao')?.touched">
+      <span>Campo obrigatório</span>
+    </div>
+  </div>
+
+
+  <button type="submit">Enviar</button>
+</form>
