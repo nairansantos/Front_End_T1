@@ -1,0 +1,27 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="GroupInput">
+    <label for="Nome">Nome></label>
+    <input formControlName="Nome" name="Nome"><br>
+  </div>
+  <div class="GroupInput">
+    <label for="Endereco">Endereco></label>
+    <input formControlName="Endereco" name="Endereco"><br>
+  </div>
+  <div class="GroupInput">
+    <label for="NomedoPet">NomedoPet></label>
+    <input formControlName="NomedoPet" name="NomedoPet"><br>
+  </div>
+  <div class="GroupInput">
+    <label for="IdadedoPet">IdadedoPet></label>
+    <input formControlName="IdadedoPet" name="IdadedoPet"><br>
+  </div>
+  <div class="GroupInput">
+    <label for="Data">Data></label>
+    <input formControlName="Data" name="Data"><br>
+  </div>
+  <div class="GroupInput">
+    <label for="Hora">Hora></label>
+    <input formControlName="Hora" name="Hora"><br>
+  </div>Hora
+  <button type="submit">Enviar</button>
+</form>
