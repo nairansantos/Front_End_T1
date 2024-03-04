@@ -1,1 +1,18 @@
-<p>listagem-atendimento works!</p>
+<h3>Atendimentos Cadastrados </h3>
+<div class="container-atendimentos">
+    <div class="atendimento" *ngFor="let atendimento of listaAtendimentos">
+        <p><strong>Data: </strong>{{atendimento.Data}} | {{atendimento.Hora}}</p>
+        <p><strong>Dono Do Pet: </strong>{{atendimento.Nome}}</p>
+        <p><strong>Email: </strong>{{atendimento.Email}}</p>
+        <p><strong>Endereço: </strong>{{atendimento.Endereco}}</p>
+        <p><strong>Nome do Pet: </strong>{{atendimento.NomedoPet}}</p>
+        <p><strong>Idade do Pet: </strong>{{atendimento.IdadedoPet}}</p>
+
+            <a routerLink="/edicao/{{atendimento.id}}" id="btn_editar" >Editar Atendimento</a>
+    </div>
+
+
+</div>
+<button (click)="excluirAtendimentos()" id="btn-excluir">Excluir Atendimento</button>
+
+

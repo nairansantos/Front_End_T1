@@ -1,0 +1,29 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1rem;
+    color: #2a2a2b;
+  }
+  
+  .logo {
+    font-size: 20px;
+    text-decoration: none;
+    color: #2a2a2b;
+  }
+  
+  .menu {
+    display: flex;
+  }
+  
+  .menu a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #2a2a2b;
+    cursor: pointer;
+  }
+  
+  .menu a:hover {
+    text-decoration: underline;
+  }
+  

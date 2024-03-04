@@ -1,5 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { atendimento } from '../typescript/atendimento';
+import { catchError, map, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,74 +11,64 @@ export class ApiService {
 
   loadedAtendimento = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  addAtendimento(atendimentoData: {
-    NomePassageiro: string;
-    numeroVoo: string;
-    dataPartida: string;
-    dataChegada: string;
-    aeroportoPartida: string;
-    aeroportoChegada: string;
-  }) {
-    this.http
-      .post(
-        'https://projeto-aulafront-default-rtdb.firebaseio.com/atendimentoData',
-        atendimentoData
-      )
-      .subscribe((responseData) => {
+
+
+  addAtendimento(novoAtendimento:atendimento) {
+
+    this.http.post(
+      'https://projeto-aulafront-default-rtdb.firebaseio.com/posts.json',
+      novoAtendimento)
+      .subscribe(responseData => {
         console.log(responseData);
+        alert("Serviço agendado")
       });
   }
 
-  getAtendimento() {
-    //generics da interface Ticket
-    //vem do firebase nesse formato
-    //ahsduiashuhui:Object
-    //dasdasdasdasd:Object
-    return this.http
-      .get<{ [key: string]: any }>(
-        'https://projeto-aulafront-default-rtdb.firebaseio.com/atendimentoData',
-        {
-          params: new HttpParams().set('print', 'pretty'),
+
+  getTodosAtendimentos() {
+ 
+    return this.http.get<{ [key: string]: atendimento }>('https://projeto-aulafront-default-rtdb.firebaseio.com/posts.json',
+      {
+        params: new HttpParams().set('print', 'pretty')
+      }
+    ).pipe(
+      catchError( error =>{
+        console.error(error);
+       
+        return throwError(error);
+      }), map(responseData => {
+        // Convertendo o objeto de resposta em um array de objetos
+        if (responseData) {
+          return Object.keys(responseData).map(key => ({ id: key, ...responseData[key] }));
+        } else {
+          return [];
         }
-      )
-      .pipe(
-        map((responseData) => {
-          const postArray = [];
-          for (const key in responseData) {
-            if (responseData.hasOwnProperty(key)) {
-              postArray.push({ ...(responseData as any)[key], id: key });
-            }
-          }
-          return postArray;
-        })
-      );
+      })
+     
+    )
   }
 
-  apagarTodosTickets() {
-    return this.http.delete(
-      'https://aula13-3a92f-default-rtdb.firebaseio.com/posts.json'
-    );
+  apagarTodosAtendimentos() {
+    return this.http.delete('https://projeto-aulafront-default-rtdb.firebaseio.com/posts.json').subscribe(()=>{
+      alert("Agendamentos apagados")
+
+    })
   }
 
-  editarTicket(
-    id: string,
-    ticketData: {
-      NomePassageiro: string;
-      numeroVoo: string;
-      dataPartida: string;
-      dataChegada: string;
-      aeroportoPartida: string;
-      aeroportoChegada: string;
-    }
+
+  getAtendimentoPorId(id: string) {
+    return this.http.get<atendimento>(`https://projeto-aulafront-default-rtdb.firebaseio.com/posts/${id}.json`);
+  }
+
+  editarAtendimento(id: string, novoAtendimento: atendimento
   ) {
-    return this.http.put(
-      `https://aula13-3a92f-default-rtdb.firebaseio.com/posts/${id}.json`,
-      ticketData,
-      { observe: 'response' }
-    );
+    return this.http.put(`https://projeto-aulafront-default-rtdb.firebaseio.com/posts/${id}.json`, novoAtendimento, { observe: 'response' }).subscribe(()=>{
+      alert(" Agendado Editado")
+
+    })
   }
 }

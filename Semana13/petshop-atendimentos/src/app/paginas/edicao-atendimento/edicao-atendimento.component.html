@@ -1,1 +1,56 @@
-<p>edicao-atendimento works!</p>
+<div class="principal">
+    <h3>Edição de Atendimento</h3>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="GroupInput">
+        <label for="Nome">Nome</label>
+        <input formControlName="Nome" name="Nome">
+        <div *ngIf="!form.get('Nome')?.valid &&  form.get('Nome')?.touched">
+          <span class="error_message"> Campo Obrigatório</span>
+        </div>
+      </div>
+      <div class="GroupInput">
+        <label for="Email">Email</label>
+        <input formControlName="Email" name="Email">
+        <div *ngIf="!form.get('Email')?.valid &&  form.get('Email')?.touched">
+          <span class="error_message"> Campo Obrigatório</span>
+        </div>
+      </div>
+      <div class="GroupInput">
+        <label for="Endereco">Endereço</label>
+        <input formControlName="Endereco" name="Endereco">
+        <div *ngIf="!form.get('Endereco')?.valid &&  form.get('Endereco')?.touched">
+          <span class="error_message"> Campo Obrigatório</span>
+        </div>
+      </div>
+      <div class="GroupInput">
+        <label for="NomedoPet">Nome do Pet</label>
+        <input formControlName="NomedoPet" name="NomedoPet">
+        <div *ngIf="!form.get('NomedoPet')?.valid &&  form.get('NomedoPet')?.touched">
+          <span class="error_message"> Campo Obrigatório</span>
+        </div>
+      </div>
+      <div class="GroupInput">
+        <label for="IdadedoPet">Idade do Pet</label>
+        <input formControlName="IdadedoPet" name="IdadedoPet">
+        <div *ngIf="!form.get('IdadedoPet')?.valid &&  form.get('IdadedoPet')?.touched">
+          <span class="error_message"> Campo Obrigatório</span>
+        </div>
+      </div>
+      <div class="GroupInput">
+        <label for="Data"> Data do Agendamento:</label>
+        <input formControlName="Data" name="Data" type="date">
+        <div *ngIf="!form.get('Data')?.valid &&  form.get('Data')?.touched">
+          <span class="error_messagem"> Campo Obrigatório</span>
+        </div>
+      </div>
+      <div class="GroupInput">
+        <label for="Hora">Hora do Atendimento</label>
+        <input formControlName="Hora" name="Hora">
+        <div *ngIf="!form.get('Hora')?.valid &&  form.get('Hora')?.touched">
+          <span class="error_message"> Campo Obrigatório</span>
+        </div>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+  
+  </div>

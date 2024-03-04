@@ -1,0 +1,43 @@
+h3{
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 2rem 0;
+}
+.container-atendimentos{
+    width: 100%;
+    padding: 1rem 5rem;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+
+.atendimento{
+    width: 18rem;
+    height: max-content;
+    padding: 1rem;
+    border: 1px solid #cecece;
+    border-radius: 10px;
+}
+
+.atendimento p {
+    margin: .5rem 0;
+}
+#btn_editar{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem ;
+}
+
+#btn-excluir{
+    display: block;
+    margin: 2rem auto;
+
+    border: none;
+    padding: .5rem;
+    border-radius: 5px;
+}
