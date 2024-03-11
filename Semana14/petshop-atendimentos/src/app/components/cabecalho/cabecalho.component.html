@@ -1,0 +1,12 @@
+<nav>
+    <a routerLink="/" class="logo">Meu Pet </a>
+
+    <div class="menu">
+
+        <a *ngIf="autenticado" routerLink="/cadastro"> Cadastrar atendimento </a>
+        <a *ngIf="autenticado" routerLink="listagem"> Listagem atendimentos </a>
+        <a *ngIf="autenticado" (click)="logout()">Sair</a>
+        <a *ngIf="!autenticado" routerLink="/login" >Login/Criar</a>
+
+    </div>
+</nav>

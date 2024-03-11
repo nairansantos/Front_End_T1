@@ -1,0 +1,32 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  color: #2a2a2b;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.logo {
+  font-size: 20px;
+  text-decoration: none;
+  color: #2a2a2b;
+  font-weight: 600;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #2a2a2b;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,24 @@
+<div class="principal">
+   
+    <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit(cadastroForm)">
+        <h2>Cadastro </h2>
+      
+        <div class="input-group">
+            <label for="user_email">Seu Email</label>
+            <input type="email" formControlName="user_email" name="user_email">
+            <div *ngIf="!cadastroForm.get('user_email')?.valid &&  cadastroForm.get('user_email')?.touched">
+                <span class="error_message"> Informe um e-mail válido</span>
+            </div>
+        </div>
+        <div class="input-group">
+            <label for="user_password">Sua Senha</label>
+            <input type="password" formControlName="user_password" name="user_password">
+            <div *ngIf="!cadastroForm.get('user_password')?.valid &&  cadastroForm.get('user_password')?.touched">
+                <span class="error_message"> Mínimo 4 caracteres, deve incluir letra maiúscula e um símbolo</span>
+            </div>
+        </div>
+        <a routerLink="/login">Tem uma conta ? <span>clique aqui</span></a>
+        <button type="submit" [disabled]="cadastroForm.invalid">Cadastrar</button>
+
+    </form>
+</div>
